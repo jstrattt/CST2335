@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="2"
+    android:rowCount="2"
+    tools:context="com.example.jessica.lab1.ListItemsActivity">
+
+
+    <Switch
+        android:text="@string/Enable_Switch"
+        android:id="@+id/switch1"
+        />
+
+    <ImageButton
+        android:background="@android:drawable/btn_star_big_on"
+        android:id = "@+id/imagebutt"/>
+
+    <RadioButton
+        android:text="@string/Button1"
+      />
+
+    <CheckBox
+        android:text="@string/Button2"
+        android:id="@+id/checks" />
+</GridLayout>
