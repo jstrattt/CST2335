@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class StartActivity extends AppCompatActivity {
     protected static final String Start_Activity ="StartActivity"; //change to all caps
     private Button button1;
+    private Button chatbutton;
 
 
 
@@ -21,10 +23,12 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
         button1 = (Button)findViewById(R.id.button);
+        chatbutton = (Button)findViewById(R.id.chatbutton);
 
 
 
         Log.i(Start_Activity, "In onCreate()");
+        Log.i(Start_Activity, "User Clicked Start Chat");
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,13 +37,30 @@ public class StartActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(StartActivity.this, ListItemsActivity.class);
                startActivityForResult(intent, 5);
+
+
+
             }
 
 
         });
 
 
-    }
+
+        chatbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent(StartActivity.this, ChatWindow.class);
+                startActivity(intent);
+
+            }
+        });
+
+        }
+
+
 
     protected void onActivityResult(int requestCode, int responseCode, Intent data){
         if (requestCode == 5) {

@@ -2,16 +2,23 @@
 <resources>
     <string name="app_name">Lab1</string>
     <string name="hello_message">Merhaba</string>
-    <string name="ButtonText">Ben button</string>
-    <string name="title_activity_login">Login Activity</string>
-    <string name="login">Login</string>
-    <string name="login_name">Login Name</string>
-    <string name="password">Password</string>
+    <string name="ButtonText">Ben düğme</string>
+    <string name="title_activity_login">Giriş etkinliği</string>
+    <string name="login">Aç</string>
+    <string name="login_name">Kullanıcı adı</string>
+    <string name="password">Parola</string>
     <string name="Enable_Switch">Enable Bisay</string>
-    <string name="Button1">Button Bir</string>
-    <string name="Button2">Button Iki</string>
-    <string name="Login">Login </string>
-    <string name="LoginPassword">Password</string>
+    <string name="Button1">Düğme Bir</string>
+    <string name="Button2">Düğme Iki</string>
+    <string name="Login">Aç</string>
+    <string name="LoginPassword">Parola</string>
+    <string name="dialog_message">Devam etmek istiyor musun?</string>
+    <string name="dialog_title">411</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Iptal etmek</string>
+    <string name="ChatButton">Sohbet başlat</string>
+    <string name="button3">Gönder</string>
+    <string name="editText"> </string>
 
 
 </resources>
