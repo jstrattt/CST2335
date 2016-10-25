@@ -1,6 +1,9 @@
 package com.example.jessica.lab1;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,7 +28,8 @@ public class ChatWindow extends AppCompatActivity {
     private EditText edit;
     private ListView list;
     public ArrayList<String> messages;
-
+    public SQLiteDatabase db;
+    public ChatDatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,28 @@ public class ChatWindow extends AppCompatActivity {
         messages = new ArrayList<String>();
 
         final ChatAdapter messageAdapter =new ChatAdapter( this );
+        databaseHelper = new ChatDatabaseHelper(this);
+
+        db = databaseHelper.getWritableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + ChatDatabaseHelper.TABLE_COMMENTS, new String[]{});
+
+        cursor.moveToFirst();
+
+        while(!cursor.isAfterLast() ){
+
+         messages.add(cursor.getString(cursor.getColumnIndex(ChatDatabaseHelper.KEY_MESSAGE)));
+            Log.i(CHAT_ACTIVITY, "SQL MESSAGE:" + cursor.getString( cursor.getColumnIndex( ChatDatabaseHelper.KEY_MESSAGE) ));
+
+
+        cursor.moveToNext();
+        }
+
+        for (int x = 0; x < cursor.getColumnCount(); x++ ){
+            cursor.getColumnName(x);
+        }
+
+        Log.i(CHAT_ACTIVITY, "Cursor’s column count =" + cursor.getColumnCount() );
         list.setAdapter (messageAdapter);
 
         send.setOnClickListener(new View.OnClickListener() {
@@ -46,16 +72,18 @@ public class ChatWindow extends AppCompatActivity {
 
                 messages.add(texts);
 
+
                 messageAdapter.notifyDataSetChanged();
 
                 edit.setText("");
 
+                ContentValues contentValues = new ContentValues();
+
+                    contentValues.put(ChatDatabaseHelper.KEY_MESSAGE , texts);
+                    db.insert(ChatDatabaseHelper.TABLE_COMMENTS ,"Null Placeholder", contentValues);
+
             }
         });
-
-
-
-
         }
 
 
@@ -82,6 +110,7 @@ public class ChatWindow extends AppCompatActivity {
 
             TextView messageText = (TextView)result.findViewById(R.id.message);
             messageText.setText(   getItem(position)  ); // get the string at position
+
             return result;
 
         }
@@ -111,6 +140,7 @@ public class ChatWindow extends AppCompatActivity {
     @Override
     protected void onDestroy(){
         super.onDestroy();
+        db.close();
         Log.i(CHAT_ACTIVITY, "In onDestroy()");
     }
 }
