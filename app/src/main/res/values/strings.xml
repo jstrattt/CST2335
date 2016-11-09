@@ -19,5 +19,8 @@
     <string name="ChatButton">Start Chat</string>
     <string name="button3">Send</string>
     <string name="editText"> </string>
-
+    <string name="title_activity_weather_forecast">WeatherForecast</string>
+    <string name="CurrentTemp">Current Temperature</string>
+    <string name="MinTemp">Minimum Temperature</string>
+    <string name="MaxTemp">Maximum Temperature</string>
 </resources>

@@ -15,6 +15,7 @@ public class StartActivity extends AppCompatActivity {
     protected static final String Start_Activity ="StartActivity"; //change to all caps
     private Button button1;
     private Button chatbutton;
+    private Button weatherButton;
 
 
 
@@ -24,6 +25,7 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
         button1 = (Button)findViewById(R.id.button);
         chatbutton = (Button)findViewById(R.id.chatbutton);
+        weatherButton = (Button)findViewById(R.id.weatherButton);
 
 
 
@@ -58,6 +60,13 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
+        weatherButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StartActivity.this, WeatherForecast.class);
+                startActivity(intent);
+            }
+        });
         }
 
 
