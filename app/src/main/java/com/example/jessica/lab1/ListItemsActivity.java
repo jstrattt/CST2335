@@ -30,9 +30,9 @@ public class ListItemsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_items);
-        image = (ImageButton) findViewById(R.id.imagebutt);
-        check = (CheckBox)findViewById(R.id.checks);
+        //setContentView(R.layout.activity_list_items);
+        //image = (ImageButton) findViewById(R.id.imagebutt);
+    //    check = (CheckBox)findViewById(R.id.checks);
 
         image.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,7 +44,7 @@ public class ListItemsActivity extends AppCompatActivity {
             }
         });
 
-           myswitch = (Switch) findViewById(R.id.switch1);
+   //        myswitch = (Switch) findViewById(R.id.switch1);
         myswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

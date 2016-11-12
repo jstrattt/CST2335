@@ -23,4 +23,9 @@
     <string name="CurrentTemp">Current Temperature</string>
     <string name="MinTemp">Minimum Temperature</string>
     <string name="MaxTemp">Maximum Temperature</string>
+    <string name="title_message_list">Messages</string>
+    <string name="title_message_detail">Message Detail</string>
+    <string name="title_item_list">Items</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="toolbar"> Toolbar </string>
 </resources>

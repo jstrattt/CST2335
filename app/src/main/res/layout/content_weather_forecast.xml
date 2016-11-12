@@ -44,16 +44,16 @@
         android:layout_height="wrap_content"
         android:text="@string/MaxTemp"
         android:id="@+id/maxTemp"
-        android:layout_marginBottom="105dp"
-        android:layout_above="@+id/progressBar"
-        android:layout_alignStart="@+id/minTemp" />
+        android:layout_marginBottom="11dp"
+        android:layout_above="@+id/currentTemp"
+        android:layout_alignStart="@+id/currentTemp" />
 
     <ProgressBar
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/progressBar"
-        android:layout_below="@+id/currentWeather"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp" />
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/minTemp"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

@@ -2,6 +2,7 @@ package com.example.jessica.lab1;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -54,7 +55,7 @@ public class StartActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent intent = new Intent(StartActivity.this, ChatWindow.class);
+                Intent intent = new Intent(StartActivity.this, MessageListActivity.class);
                 startActivity(intent);
 
             }

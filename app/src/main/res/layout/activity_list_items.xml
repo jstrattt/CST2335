@@ -19,7 +19,7 @@
 
     <RadioButton
         android:text="@string/Button1"
-      />
+        />
 
     <CheckBox
         android:text="@string/Button2"
